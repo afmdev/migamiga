@@ -51,22 +51,84 @@ a { color: inherit; text-decoration: none; }
 
 /* ---------- Tokens (palette anchored on real logo colors) ---------- */
 :root {
-  --bg:       #0E0810;   /* black with a subtle violet undertone */
-  --surface:  #1C1024;   /* violet-tinted dark for cards, chips */
-  --surface-2:#2A1836;   /* elevated (search box, hover) */
-  --line:     #3A2650;   /* violet-tinted divider */
-  --text:     #FFFFFF;
-  --text-2:   #B5A8C3;   /* lavender-gray secondary */
-  --text-3:   #766486;   /* muted */
+  /* Brand — same in both themes */
   --yellow:   #F8D800;   /* migamiga yellow — exact from logo */
-  --yellow-hi:#FFE664;   /* hover / highlight */
-  --yellow-soft:#3A3208;  /* dark yellow tint bg (for chip hover, etc.) */
+  --yellow-hi:#FFE664;
   --purple:   #8010C8;   /* migamiga purple — exact from logo */
-  --purple-hi:#A855F7;   /* brighter purple for hover */
-  --purple-soft:#C084FC;  /* lightest for subtle accents */
-  --lime:     #A3E635;   /* fresh/veggie complement — plays with yellow */
-  --coral:    #FB7185;   /* spicy/warm complement — plays with purple */
+  --purple-hi:#A855F7;
+  --purple-soft:#C084FC;
+  --lime:     #A3E635;
+  --coral:    #FB7185;
   --star:     #F8D800;
+
+  /* Dark theme defaults */
+  --bg:       #0E0810;
+  --surface:  #1C1024;
+  --surface-2:#2A1836;
+  --line:     #3A2650;
+  --text:     #FFFFFF;
+  --text-2:   #B5A8C3;
+  --text-3:   #766486;
+  --yellow-soft:#3A3208;
+  --nav-bg:   rgba(14, 8, 16, 0.85);
+  --zones-grad-a: rgba(128,16,200,0.16);
+  --zones-grad-b: rgba(248,216,0,0.06);
+  --shadow-photo: 0 8px 24px rgba(0,0,0,.5), 0 0 0 3px var(--surface);
+  --shadow-nav:   0 10px 40px rgba(0,0,0,.5);
+  --photo-bg: #2A1836;   /* dark violet "medallion" — stays dark in both themes */
+}
+
+/* Light theme — either explicit via data-theme, or system preference when unset */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    --bg:       #FFFBF0;
+    --surface:  #FFFFFF;
+    --surface-2:#F5F1EA;
+    --line:     #E8DFD3;
+    --text:     #1A0A24;
+    --text-2:   #5B4B6B;
+    --text-3:   #8A7B99;
+    --yellow-soft:#FFF3B8;
+    --nav-bg:   rgba(255, 251, 240, 0.85);
+    --zones-grad-a: rgba(128,16,200,0.10);
+    --zones-grad-b: rgba(248,216,0,0.14);
+    --shadow-photo: 0 8px 24px rgba(128,16,200,.18), 0 0 0 3px var(--surface);
+    --shadow-nav:   0 10px 40px rgba(128,16,200,.15);
+  }
+}
+:root[data-theme="light"] {
+  --bg:       #FFFBF0;
+  --surface:  #FFFFFF;
+  --surface-2:#F5F1EA;
+  --line:     #E8DFD3;
+  --text:     #1A0A24;
+  --text-2:   #5B4B6B;
+  --text-3:   #8A7B99;
+  --yellow-soft:#FFF3B8;
+  --nav-bg:   rgba(255, 251, 240, 0.85);
+  --zones-grad-a: rgba(128,16,200,0.10);
+  --zones-grad-b: rgba(248,216,0,0.14);
+  --shadow-photo: 0 8px 24px rgba(128,16,200,.18), 0 0 0 3px var(--surface);
+  --shadow-nav:   0 10px 40px rgba(128,16,200,.15);
+}
+/* Explicit dark override wins over prefers-color-scheme:light */
+:root[data-theme="dark"] {
+  --bg:       #0E0810;
+  --surface:  #1C1024;
+  --surface-2:#2A1836;
+  --line:     #3A2650;
+  --text:     #FFFFFF;
+  --text-2:   #B5A8C3;
+  --text-3:   #766486;
+  --yellow-soft:#3A3208;
+  --nav-bg:   rgba(14, 8, 16, 0.85);
+  --zones-grad-a: rgba(128,16,200,0.16);
+  --zones-grad-b: rgba(248,216,0,0.06);
+  --shadow-photo: 0 8px 24px rgba(0,0,0,.5), 0 0 0 3px var(--surface);
+  --shadow-nav:   0 10px 40px rgba(0,0,0,.5);
+}
+
+:root {
 
   --nav-h: 64px;
   --radius:  24px;
@@ -98,6 +160,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
   padding-bottom: 88px; /* space for mobile bottom nav */
+  transition: background .2s ease, color .2s ease;
 }
 @media (min-width: 769px) {
   body { padding-bottom: 0; }
@@ -129,7 +192,7 @@ a:hover { color: var(--yellow); }
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(14, 8, 16, 0.85);
+  background: var(--nav-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
@@ -168,6 +231,29 @@ a:hover { color: var(--yellow); }
   justify-content: center;
 }
 .nav__hamburger svg { width: 18px; height: 18px; fill: var(--text); }
+
+/* Theme toggle */
+.theme-toggle {
+  width: 40px; height: 40px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-2);
+  transition: background .18s ease, color .18s ease, transform .18s ease;
+}
+.theme-toggle:hover { color: var(--yellow); transform: rotate(-15deg); }
+.theme-toggle svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+.theme-toggle .icon-sun { display: none; }
+.theme-toggle .icon-moon { display: block; }
+:root[data-theme="light"] .theme-toggle .icon-sun { display: block; }
+:root[data-theme="light"] .theme-toggle .icon-moon { display: none; }
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) .theme-toggle .icon-sun { display: block; }
+  :root:not([data-theme]) .theme-toggle .icon-moon { display: none; }
+}
 .nav__mobile {
   position: fixed;
   top: var(--nav-h);
@@ -399,8 +485,8 @@ a:hover { color: var(--yellow); }
   width: 112px; height: 112px;
   border-radius: 50%;
   overflow: hidden;
-  background: var(--surface-2);
-  box-shadow: 0 8px 24px rgba(0,0,0,.5), 0 0 0 3px var(--surface);
+  background: var(--photo-bg);
+  box-shadow: var(--shadow-photo);
 }
 .card__photo img { width: 100%; height: 100%; object-fit: cover; }
 
@@ -494,7 +580,7 @@ a:hover { color: var(--yellow); }
 .zones {
   margin-top: 20px;
   padding: 24px;
-  background: linear-gradient(135deg, rgba(128,16,200,0.16), rgba(248,216,0,0.06));
+  background: linear-gradient(135deg, var(--zones-grad-a), var(--zones-grad-b));
   border-radius: var(--radius);
   border: 1px solid var(--purple);
 }
@@ -552,6 +638,7 @@ a:hover { color: var(--yellow); }
   padding: 56px var(--gutter) 40px;
   border-top: 1px solid var(--line);
   font-size: var(--fs-sm);
+  transition: background .2s ease, color .2s ease;
 }
 .footer a { color: var(--text); border-bottom: 1px solid var(--line); padding-bottom: 1px; }
 .footer a:hover { color: var(--yellow); border-color: var(--yellow); }
@@ -594,7 +681,7 @@ a:hover { color: var(--yellow); }
   justify-content: space-between;
   align-items: center;
   z-index: 60;
-  box-shadow: 0 10px 40px rgba(0,0,0,.5);
+  box-shadow: var(--shadow-nav);
 }
 .bottomnav__item {
   width: 40px; height: 40px;
@@ -646,6 +733,9 @@ a:hover { color: var(--yellow); }
     .legal p { margin: 0 0 12px; }
     .legal ul { margin: 0 0 12px; padding-left: 24px; }
   </style>
+  <script>
+    (function(){try{var t=localStorage.getItem('mm_theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(_){}}());
+  </script>
 </head>
 <body>
   <nav class="nav">
@@ -657,6 +747,10 @@ a:hover { color: var(--yellow); }
         <a class="nav__link" href="de/index.html#menu">Menü</a>
         <a class="nav__link" href="de/index.html#como-funciona">So geht's</a>
         <a class="nav__link" href="de/index.html#contacto">Kontakt</a>
+        <button class="theme-toggle" type="button" aria-label="Theme umschalten" aria-pressed="false">
+          <svg class="icon-moon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
       </div>
     </div>
   </nav>

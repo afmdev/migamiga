@@ -45,4 +45,22 @@
       });
     });
   }
+
+  // 5. Theme toggle — click cycles data-theme + persists to localStorage.
+  //    Initial data-theme is set inline in <head> to prevent FOUC.
+  function currentTheme() {
+    var t = document.documentElement.getAttribute('data-theme');
+    if (t === 'light' || t === 'dark') return t;
+    return (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+  }
+  var toggles = document.querySelectorAll('.theme-toggle');
+  toggles.forEach(function (btn) {
+    btn.setAttribute('aria-pressed', currentTheme() === 'light' ? 'true' : 'false');
+    btn.addEventListener('click', function () {
+      var next = currentTheme() === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('mm_theme', next); } catch (_) {}
+      toggles.forEach(function (b) { b.setAttribute('aria-pressed', next === 'light' ? 'true' : 'false'); });
+    });
+  });
 })();
