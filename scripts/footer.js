@@ -18,8 +18,8 @@
       '</div>' +
       '<div class="footer__links">' +
         '<strong>Rechtliches</strong>' +
-        '<a href="impressum">Impressum</a>' +
-        '<a href="datenschutz">Datenschutz</a>' +
+        '<a href="impressum.html">Impressum</a>' +
+        '<a href="datenschutz.html">Datenschutz</a>' +
         '<span>© ' + year + ' migamiga</span>' +
       '</div>' +
     '</div></footer>';
