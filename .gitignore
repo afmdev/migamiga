@@ -21,3 +21,10 @@ rad.json
 *.flf
 #Test results file
 TestResults.xml
+
+### migamiga ###
+.DS_Store
+*.log
+node_modules/
+.env
+.env.local

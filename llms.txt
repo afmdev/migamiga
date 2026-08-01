@@ -1,0 +1,15 @@
+# migamiga
+
+migamiga is a lunchbox sandwich delivery service based in Berlin.
+
+## Pages
+
+- [Home (DE)](https://migamiga.de/de/)
+- [Home (EN)](https://migamiga.de/en/)
+- [Home (ES)](https://migamiga.de/es/)
+- [Impressum](https://migamiga.de/impressum)
+- [Datenschutz](https://migamiga.de/datenschutz)
+
+## Contact
+
+WhatsApp: +49 170 123 4567 (placeholder — replace with real number)

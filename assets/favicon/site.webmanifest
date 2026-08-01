@@ -1,0 +1,10 @@
+{
+  "name": "migamiga",
+  "short_name": "migamiga",
+  "icons": [
+    { "src": "/assets/favicon/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ],
+  "theme_color": "#7C3AED",
+  "background_color": "#FFF8E7",
+  "display": "standalone"
+}
