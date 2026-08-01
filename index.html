@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>migamiga</title>
+  <meta name="description" content="migamiga — Sandwich lunchboxes in Berlin.">
+  <link rel="canonical" href="https://migamiga.de/de/">
+  <link rel="alternate" hreflang="de" href="https://migamiga.de/de/">
+  <link rel="alternate" hreflang="en" href="https://migamiga.de/en/">
+  <link rel="alternate" hreflang="es" href="https://migamiga.de/es/">
+  <link rel="alternate" hreflang="x-default" href="https://migamiga.de/de/">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+  <script>
+    (function () {
+      var SUPPORTED = ['de', 'en', 'es'];
+      var target;
+      try {
+        var stored = localStorage.getItem('mm_lang');
+        if (stored && SUPPORTED.indexOf(stored) !== -1) target = stored;
+      } catch (_) { /* localStorage blocked */ }
+      if (!target && navigator.languages) {
+        for (var i = 0; i < navigator.languages.length; i++) {
+          var code = String(navigator.languages[i]).slice(0, 2).toLowerCase();
+          if (SUPPORTED.indexOf(code) !== -1) { target = code; break; }
+        }
+      }
+      if (!target) target = 'de';
+      location.replace(target + '/');
+    })();
+  </script>
+  <noscript><meta http-equiv="refresh" content="0; url=de/"></noscript>
+</head>
+<body></body>
+</html>
