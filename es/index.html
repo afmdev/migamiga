@@ -59,20 +59,24 @@ a { color: inherit; text-decoration: none; }
   src: url('../assets/fonts/fraunces-latin-300-italic.woff2') format('woff2');
 }
 
-/* ---------- Tokens ---------- */
+/* ---------- Tokens (palette anchored on real logo colors) ---------- */
 :root {
-  --bg:       #0F0E0C;   /* app background */
-  --surface:  #1A1815;   /* cards, chips, bottom nav */
-  --surface-2:#24211D;   /* elevated surfaces (search, tabs) */
-  --line:     #2A2724;   /* subtle divider */
+  --bg:       #0E0810;   /* black with a subtle violet undertone */
+  --surface:  #1C1024;   /* violet-tinted dark for cards, chips */
+  --surface-2:#2A1836;   /* elevated (search box, hover) */
+  --line:     #3A2650;   /* violet-tinted divider */
   --text:     #FFFFFF;
-  --text-2:   #A8A29E;   /* secondary text */
-  --text-3:   #6B6862;   /* muted */
-  --yellow:   #F5C518;   /* migamiga primary */
-  --yellow-hi:#FFD84A;
-  --purple:   #7C3AED;   /* from logo */
-  --purple-2: #A78BFA;   /* lighter purple for hover */
-  --star:     #F5C518;
+  --text-2:   #B5A8C3;   /* lavender-gray secondary */
+  --text-3:   #766486;   /* muted */
+  --yellow:   #F8D800;   /* migamiga yellow — exact from logo */
+  --yellow-hi:#FFE664;   /* hover / highlight */
+  --yellow-soft:#3A3208;  /* dark yellow tint bg (for chip hover, etc.) */
+  --purple:   #8010C8;   /* migamiga purple — exact from logo */
+  --purple-hi:#A855F7;   /* brighter purple for hover */
+  --purple-soft:#C084FC;  /* lightest for subtle accents */
+  --lime:     #A3E635;   /* fresh/veggie complement — plays with yellow */
+  --coral:    #FB7185;   /* spicy/warm complement — plays with purple */
+  --star:     #F8D800;
 
   --nav-h: 64px;
   --radius:  24px;
@@ -135,7 +139,7 @@ a:hover { color: var(--yellow); }
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(15, 14, 12, 0.85);
+  background: rgba(14, 8, 16, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
@@ -340,9 +344,10 @@ a:hover { color: var(--yellow); }
   transition: transform .18s ease, background .18s ease;
 }
 .chip__label { font-size: var(--fs-sm); font-weight: 500; }
-.chip.is-active .chip__icon { background: var(--yellow); }
+.chip.is-active .chip__icon { background: var(--yellow); box-shadow: 0 6px 20px rgba(248,216,0,0.35); }
 .chip.is-active .chip__label { color: var(--text); }
-.chip:hover .chip__icon { transform: translateY(-2px); }
+.chip:hover .chip__icon { transform: translateY(-2px); background: var(--surface-2); }
+.chip.is-active:hover .chip__icon { background: var(--yellow); }
 
 /* ---------- Section ---------- */
 .section {
@@ -405,7 +410,7 @@ a:hover { color: var(--yellow); }
   border-radius: 50%;
   overflow: hidden;
   background: var(--surface-2);
-  box-shadow: 0 8px 24px rgba(0,0,0,.35);
+  box-shadow: 0 8px 24px rgba(0,0,0,.5), 0 0 0 3px var(--surface);
 }
 .card__photo img { width: 100%; height: 100%; object-fit: cover; }
 
@@ -478,7 +483,11 @@ a:hover { color: var(--yellow); }
   font-weight: 700;
   font-size: var(--fs-sm);
   margin-bottom: 16px;
+  box-shadow: 0 4px 16px rgba(248,216,0,0.25);
 }
+.step:nth-child(2) .step__num { background: var(--purple); color: var(--yellow); box-shadow: 0 4px 16px rgba(128,16,200,0.35); }
+.step:nth-child(3) .step__num { background: var(--lime); color: var(--bg); box-shadow: 0 4px 16px rgba(163,230,53,0.25); }
+.step:nth-child(4) .step__num { background: var(--coral); color: var(--bg); box-shadow: 0 4px 16px rgba(251,113,133,0.25); }
 .step__title {
   font-size: var(--fs-md);
   font-weight: 600;
@@ -495,7 +504,7 @@ a:hover { color: var(--yellow); }
 .zones {
   margin-top: 20px;
   padding: 24px;
-  background: var(--surface);
+  background: linear-gradient(135deg, rgba(128,16,200,0.16), rgba(248,216,0,0.06));
   border-radius: var(--radius);
   border: 1px solid var(--purple);
 }
@@ -544,7 +553,7 @@ a:hover { color: var(--yellow); }
 .btn--primary { background: var(--yellow); color: var(--bg); }
 .btn--primary:hover { background: var(--yellow-hi); }
 .btn--purple { background: var(--purple); color: var(--text); }
-.btn--purple:hover { background: var(--purple-2); }
+.btn--purple:hover { background: var(--purple-hi); }
 
 /* ---------- Footer ---------- */
 .footer {

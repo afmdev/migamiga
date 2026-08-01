@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240">
-  <rect width="240" height="240" fill="#24211D"/>
-  <circle cx="120" cy="120" r="90" fill="#F5C518" opacity="0.15"/>
-  <text x="120" y="112" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-weight="300" font-size="26" fill="#F5C518">La</text>
+  <rect width="240" height="240" fill="#2A1836"/>
+  <circle cx="120" cy="120" r="90" fill="#F8D800" opacity="0.22"/>
+  <text x="120" y="112" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-weight="300" font-size="26" fill="#F8D800">La</text>
   <text x="120" y="146" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-weight="300" font-size="26" fill="#FFFFFF">Milanesa</text>
 </svg>
