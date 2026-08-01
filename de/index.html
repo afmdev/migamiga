@@ -20,166 +20,168 @@
   <style data-inline-css>
 /* ==============================================================
    migamiga site.css — SINGLE source of truth for all styles.
-   Inlined into every HTML via scripts/tools/inline-css.py.
+   Nordic Minimal / Aesop. Inlined via scripts/tools/inline-css.py.
    ============================================================== */
 
 /* ---------- Reset (minimal) ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 img, svg { display: block; max-width: 100%; height: auto; }
-button { font: inherit; cursor: pointer; }
+button { font: inherit; cursor: pointer; background: none; border: none; color: inherit; padding: 0; }
 a { color: inherit; text-decoration: none; }
 
-/* ---------- Fonts ---------- */
+/* ---------- Fonts (self-hosted, subset latin) ---------- */
 @font-face {
-  font-family: 'Space Grotesk';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('/assets/fonts/space-grotesk-latin-700-normal.woff2') format('woff2');
+  font-family: 'Inter';
+  font-style: normal; font-weight: 300; font-display: swap;
+  src: url('/assets/fonts/inter-latin-300-normal.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
+  font-style: normal; font-weight: 400; font-display: swap;
   src: url('/assets/fonts/inter-latin-400-normal.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Inter';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
+  font-style: normal; font-weight: 500; font-display: swap;
   src: url('/assets/fonts/inter-latin-500-normal.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Inter';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
+  font-style: normal; font-weight: 600; font-display: swap;
   src: url('/assets/fonts/inter-latin-600-normal.woff2') format('woff2');
 }
+@font-face {
+  font-family: 'Fraunces';
+  font-style: italic; font-weight: 300; font-display: swap;
+  src: url('/assets/fonts/fraunces-latin-300-italic.woff2') format('woff2');
+}
 
-/* ---------- Tokens (palette derived from real logo) ---------- */
+/* ---------- Tokens ---------- */
 :root {
-  --purple: #7C3AED;
-  --purple-dark: #5B21B6;
-  --yellow: #F5C518;
-  --red: #E63946;
-  --green: #2A9D3F;
-  --black: #1A1A1A;
-  --cream: #FFF8E7;
+  --bone:  #F5F1EA;   /* main bg — warm off-white */
+  --paper: #EDE8DE;   /* alternating section bg (subtly darker) */
+  --ink:   #1C1A17;   /* text — near black, warm */
+  --stone: #8A857D;   /* secondary text, hairlines */
+  --taupe: #C9BFB2;   /* subtle accent, quiet borders */
+  --plum:  #3D2B47;   /* single deep accent, echoes logo purple */
   --white: #FFFFFF;
 
-  --nav-h: 68px;
-  --frame: 8px;
+  --nav-h: 72px;
+  --hairline: 1px solid var(--taupe);
 
-  --fs-xs: 0.85rem;
-  --fs-sm: 1rem;
-  --fs-md: 1.125rem;
-  --fs-lg: 1.5rem;
-  --fs-xl: 2rem;
-  --fs-2xl: 3rem;
-  --fs-3xl: 4.5rem;
-  --fs-hero: clamp(3rem, 10vw, 7.5rem);
+  --fs-xs:  0.8125rem;   /* 13 */
+  --fs-sm:  0.9375rem;   /* 15 */
+  --fs-md:  1.0625rem;   /* 17 */
+  --fs-lg:  1.375rem;    /* 22 */
+  --fs-xl:  1.75rem;     /* 28 */
+  --fs-2xl: 2.5rem;      /* 40 */
+  --fs-3xl: 3.5rem;      /* 56 */
+  --fs-hero: clamp(2.75rem, 8vw, 5.5rem);
 
-  --shadow: 4px 4px 0 var(--black);
-  --shadow-hover: 6px 6px 0 var(--black);
-  --border: 3px solid var(--black);
+  --wrap: 1080px;
+  --gutter: 32px;
+  --pad-section: 128px;
 }
 
 /* ---------- Base ---------- */
 html { scroll-behavior: smooth; }
 body {
   font-family: 'Inter', system-ui, sans-serif;
-  font-weight: 400;
-  font-size: var(--fs-sm);
-  color: var(--black);
-  background: var(--white);
-  line-height: 1.5;
-  border-left: var(--frame) solid var(--purple);
-  border-right: var(--frame) solid var(--purple);
-  min-height: 100vh;
+  font-weight: 300;
+  font-size: var(--fs-md);
+  color: var(--ink);
+  background: var(--bone);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.005em;
 }
-body::before, body::after {
-  content: "";
-  position: fixed;
-  left: 0; right: 0;
-  height: var(--frame);
-  background: var(--purple);
-  z-index: 100;
-}
-body::before { top: 0; }
-body::after { bottom: 0; }
 
 main { padding-top: 0; }
 
-h1, h2, h3 {
-  font-family: 'Space Grotesk', 'Inter', sans-serif;
-  font-weight: 700;
-  line-height: 1.05;
+h1, h2, h3, h4 {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
   margin: 0 0 0.5em;
+  color: var(--ink);
 }
 
-a { text-decoration: underline; text-decoration-thickness: 3px; text-decoration-color: var(--red); }
-a:hover { text-decoration-color: var(--black); }
+p { margin: 0 0 1em; }
+p:last-child { margin-bottom: 0; }
 
-:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
+.serif {
+  font-family: 'Fraunces', 'Iowan Old Style', Georgia, serif;
+  font-style: italic;
+  font-weight: 300;
+  letter-spacing: 0;
+}
+
+a {
+  transition: color .2s ease, border-color .2s ease;
+  border-bottom: 1px solid var(--taupe);
+  padding-bottom: 1px;
+}
+a:hover { border-bottom-color: var(--ink); color: var(--ink); }
+
+:focus-visible { outline: 2px solid var(--plum); outline-offset: 4px; }
+
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
 
 /* ---------- Nav ---------- */
 .nav {
   position: sticky;
-  top: var(--frame);
+  top: 0;
   z-index: 50;
-  background: var(--white);
-  border-bottom: var(--border);
+  background: var(--bone);
+  border-bottom: var(--hairline);
   height: var(--nav-h);
-  transition: background .18s ease, color .18s ease, border-color .18s ease;
 }
-.nav.scrolled { background: var(--black); color: var(--yellow); border-bottom-color: var(--yellow); }
-.nav.scrolled .nav__link { color: var(--yellow); }
 .nav__inner {
-  max-width: 1280px;
+  max-width: var(--wrap);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 var(--gutter);
   height: 100%;
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 32px;
 }
-.nav__logo { flex: 0 0 auto; }
-.nav__logo img, .nav__logo svg { height: 40px; width: auto; }
+.nav__logo { flex: 0 0 auto; border: none; padding: 0; }
+.nav__logo:hover { border: none; }
+.nav__logo img, .nav__logo svg { height: 36px; width: auto; display: block; }
 .nav__links {
   display: none;
-  gap: 24px;
+  gap: 32px;
   margin-left: auto;
   align-items: center;
 }
 .nav__link {
-  font-weight: 600;
-  text-decoration: none;
-  color: var(--black);
+  font-size: var(--fs-sm);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  border: none;
+  padding: 0;
 }
-.nav__link:hover { text-decoration: underline; text-decoration-thickness: 3px; }
+.nav__link:hover { color: var(--stone); border: none; }
 .nav__hamburger {
   margin-left: auto;
-  background: transparent;
-  border: var(--border);
-  padding: 6px 10px;
-  font-weight: 600;
-  color: inherit;
+  padding: 8px 12px;
+  font-size: var(--fs-sm);
+  border: var(--hairline);
 }
 .nav__mobile {
   position: fixed;
-  top: calc(var(--nav-h) + var(--frame));
-  left: var(--frame);
-  right: var(--frame);
-  background: var(--white);
-  border: var(--border);
-  padding: 16px;
+  top: var(--nav-h);
+  left: 0; right: 0;
+  background: var(--bone);
+  border-bottom: var(--hairline);
+  padding: 24px var(--gutter);
   display: none;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
   z-index: 40;
 }
 .nav__mobile[open] { display: flex; }
@@ -197,245 +199,281 @@ a:hover { text-decoration-color: var(--black); }
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   padding: 6px 10px;
-  border: var(--border);
-  background: var(--white);
-  color: var(--black);
-  font-weight: 600;
+  font-size: var(--fs-sm);
+  font-weight: 400;
+  color: var(--stone);
+  border: none;
 }
+.lang-dd__summary:hover { color: var(--ink); border: none; }
 .lang-dd__summary::-webkit-details-marker { display: none; }
 .lang-dd__panel {
   position: absolute;
-  top: calc(100% + 6px);
+  top: calc(100% + 4px);
   right: 0;
-  background: var(--white);
-  border: var(--border);
-  min-width: 160px;
-  padding: 6px;
+  background: var(--bone);
+  border: var(--hairline);
+  min-width: 180px;
+  padding: 4px;
   z-index: 60;
-  box-shadow: var(--shadow);
 }
 .lang-dd__opt {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px;
-  text-decoration: none;
-  color: var(--black);
-  font-weight: 500;
+  gap: 12px;
+  padding: 10px 12px;
+  font-size: var(--fs-sm);
+  color: var(--ink);
+  border: none;
 }
-.lang-dd__opt:hover { background: var(--yellow); }
-.lang-dd__opt img { width: 24px; height: 16px; }
+.lang-dd__opt:hover { background: var(--paper); border: none; }
+.lang-dd__opt img { width: 22px; height: 15px; opacity: .9; }
 
 /* ---------- Hero ---------- */
 .hero {
-  background: var(--purple);
-  color: var(--yellow);
-  padding: 96px 24px 128px;
-  border-bottom: var(--border);
+  background: var(--bone);
+  padding: 128px 24px 128px;
   text-align: center;
 }
 .hero__title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-weight: 300;
   font-size: var(--fs-hero);
-  letter-spacing: -0.03em;
-  margin-bottom: 16px;
-  color: var(--yellow);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 24px;
+  color: var(--ink);
 }
 .hero__tagline {
   font-size: var(--fs-lg);
-  font-weight: 500;
-  max-width: 640px;
-  margin: 0 auto 32px;
-  color: var(--cream);
+  font-weight: 300;
+  color: var(--stone);
+  max-width: 560px;
+  margin: 0 auto 48px;
+  line-height: 1.5;
 }
 .hero__cta { margin-top: 8px; }
 .hero__image {
-  margin: 64px auto 0;
-  max-width: 640px;
-  border: var(--border);
-  box-shadow: var(--shadow);
-  transform: rotate(-1deg);
+  margin: 96px auto 0;
+  max-width: 720px;
+  border: var(--hairline);
   background: var(--white);
 }
 
 /* ---------- Sections ---------- */
 .section {
-  padding: 96px 24px;
-  border-bottom: var(--border);
+  padding: var(--pad-section) var(--gutter);
 }
-.section--cream { background: var(--cream); }
-.section--yellow { background: var(--yellow); }
-.section--white { background: var(--white); }
+.section--paper { background: var(--paper); }
+.section--bone { background: var(--bone); }
+.section__kicker {
+  display: block;
+  text-align: center;
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 16px;
+}
 .section__title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-weight: 300;
   font-size: var(--fs-2xl);
   text-align: center;
-  margin-bottom: 48px;
-  letter-spacing: -0.02em;
+  margin-bottom: 72px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
 }
-.section__inner { max-width: 1280px; margin: 0 auto; }
+.section__inner { max-width: var(--wrap); margin: 0 auto; }
 
-/* ---------- Menu grid ---------- */
-.menu-grid {
+/* ---------- Menu (list, not cards) ---------- */
+.menu {
+  max-width: 780px;
+  margin: 0 auto;
+  border-top: var(--hairline);
+}
+.menu__item {
+  padding: 32px 0;
+  border-bottom: var(--hairline);
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
+  grid-template-columns: 1fr auto;
+  gap: 8px 32px;
+  align-items: baseline;
 }
-@media (min-width: 769px) and (max-width: 1024px) {
-  .menu-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (min-width: 1025px) {
-  .menu-grid { grid-template-columns: repeat(3, 1fr); }
-}
-.card {
-  background: var(--white);
-  border: var(--border);
-  box-shadow: var(--shadow);
-  overflow: hidden;
-  transition: transform .12s ease, box-shadow .12s ease;
-  position: relative;
-}
-.card:nth-child(odd)  { transform: rotate(-1deg); }
-.card:nth-child(even) { transform: rotate(1deg); }
-.card:hover { transform: translate(-2px, -2px); box-shadow: var(--shadow-hover); }
-.card__img {
-  aspect-ratio: 3 / 2;
-  object-fit: cover;
-  width: 100%;
-  border-bottom: var(--border);
-}
-.card__body { padding: 20px; }
-.card__title {
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 700;
+.menu__name {
   font-size: var(--fs-lg);
-  margin: 0 0 8px;
-}
-.card__ingredients {
-  font-size: var(--fs-sm);
-  margin: 0 0 16px;
-  color: var(--black);
-}
-.card__price {
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 700;
-  font-size: var(--fs-lg);
-  color: var(--red);
+  font-weight: 500;
+  color: var(--ink);
   margin: 0;
 }
-.badge {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  padding: 6px 12px;
-  border: var(--border);
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 700;
-  font-size: var(--fs-xs);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  z-index: 2;
+.menu__price {
+  font-size: var(--fs-md);
+  font-weight: 400;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
-.badge--veggie { background: var(--green); color: var(--white); }
-.badge--spicy  { background: var(--red); color: var(--white); }
-.badge--nuevo  { background: var(--yellow); color: var(--black); }
+.menu__ingredients {
+  grid-column: 1 / -1;
+  font-size: var(--fs-sm);
+  color: var(--stone);
+  margin: 0;
+  line-height: 1.55;
+}
+.menu__tag {
+  display: inline-block;
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--plum);
+  margin-left: 12px;
+  vertical-align: middle;
+}
 
 /* ---------- Steps ---------- */
 .steps {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 32px;
+  gap: 48px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 @media (min-width: 769px) {
-  .steps { grid-template-columns: repeat(4, 1fr); }
+  .steps { grid-template-columns: repeat(4, 1fr); gap: 40px; }
 }
-.step {
-  background: var(--white);
-  border: var(--border);
-  box-shadow: var(--shadow);
-  padding: 24px;
-  text-align: center;
-}
-.step__icon {
-  width: 64px;
-  height: 64px;
-  margin: 0 auto 16px;
+.step { text-align: left; }
+.step__num {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: var(--fs-2xl);
+  color: var(--plum);
+  line-height: 1;
+  margin-bottom: 16px;
+  display: block;
 }
 .step__title {
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 700;
-  font-size: var(--fs-lg);
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: var(--fs-md);
   margin: 0 0 8px;
+  letter-spacing: 0;
 }
-.step__body { font-size: var(--fs-sm); margin: 0; }
+.step__body {
+  font-size: var(--fs-sm);
+  color: var(--stone);
+  margin: 0;
+  line-height: 1.55;
+}
 
 .zones {
-  margin-top: 48px;
-  padding: 32px 24px;
-  background: var(--purple);
-  color: var(--cream);
-  border: var(--border);
-  box-shadow: var(--shadow);
+  margin: 96px auto 0;
+  max-width: 720px;
   text-align: center;
+  padding-top: 48px;
+  border-top: var(--hairline);
 }
 .zones h3 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: var(--fs-lg);
-  margin: 0 0 12px;
-  color: var(--yellow);
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: var(--fs-xl);
+  margin: 0 0 16px;
+  letter-spacing: 0;
 }
-.zones p { margin: 0 0 8px; }
+.zones p { color: var(--stone); font-size: var(--fs-sm); margin: 0 0 6px; }
 
 /* ---------- Contact ---------- */
-.contact { text-align: center; }
-.contact__intro { margin-bottom: 24px; font-size: var(--fs-md); }
-.contact__btn {
-  display: inline-block;
-  margin: 12px;
+.contact {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
 }
+.contact__intro {
+  font-size: var(--fs-lg);
+  font-weight: 300;
+  color: var(--stone);
+  margin: 0 0 48px;
+  line-height: 1.5;
+}
+.contact__btn { display: inline-block; margin: 8px 12px; }
 
 /* ---------- Buttons ---------- */
 .btn {
   display: inline-block;
-  padding: 16px 32px;
-  border: var(--border);
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 700;
-  font-size: var(--fs-md);
-  text-decoration: none;
-  transition: transform .12s ease, box-shadow .12s ease;
-  box-shadow: var(--shadow);
+  padding: 14px 32px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: var(--fs-sm);
+  letter-spacing: 0.05em;
+  border: 1px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  transition: background .2s ease, color .2s ease;
 }
-.btn:hover { transform: translate(-2px, -2px); box-shadow: var(--shadow-hover); text-decoration: none; }
-.btn--primary { background: var(--yellow); color: var(--black); }
-.btn--outline { background: var(--white); color: var(--black); }
-.btn--dark    { background: var(--black); color: var(--yellow); }
+.btn:hover { background: var(--ink); color: var(--bone); border-color: var(--ink); }
+.btn--primary { background: var(--ink); color: var(--bone); }
+.btn--primary:hover { background: transparent; color: var(--ink); }
+
+/* Nav-scrolled state removed — Aesop layout stays quiet, no toggle. */
+.nav.scrolled { /* no-op — kept so nav.js remains harmless if it toggles */ }
 
 /* ---------- Footer ---------- */
 .footer {
-  background: var(--black);
-  color: var(--cream);
-  padding: 48px 24px;
+  background: var(--bone);
+  color: var(--stone);
+  padding: 96px var(--gutter) 64px;
+  border-top: var(--hairline);
+  font-size: var(--fs-sm);
 }
-.footer a { color: var(--yellow); }
+.footer a { color: var(--ink); border-bottom-color: var(--taupe); }
+.footer a:hover { border-bottom-color: var(--ink); }
 .footer__inner {
-  max-width: 1280px;
+  max-width: var(--wrap);
   margin: 0 auto;
   display: grid;
-  gap: 32px;
+  gap: 48px;
   grid-template-columns: 1fr;
 }
 @media (min-width: 769px) {
   .footer__inner { grid-template-columns: 2fr 1fr 1fr; }
 }
-.footer__links { display: flex; flex-direction: column; gap: 8px; }
+.footer__inner strong { display: block; color: var(--ink); font-weight: 500; margin-bottom: 12px; letter-spacing: 0.05em; }
+.footer__links { display: flex; flex-direction: column; gap: 6px; }
+.footer__links span { color: var(--stone); }
+
+/* ---------- Legal pages ---------- */
+.legal { max-width: 720px; margin: 0 auto; padding: 96px 24px 128px; }
+.legal h1 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: var(--fs-2xl);
+  margin-bottom: 48px;
+  letter-spacing: -0.01em;
+}
+.legal h2 {
+  font-size: var(--fs-md);
+  font-weight: 500;
+  margin-top: 40px;
+  margin-bottom: 12px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+.legal p { margin: 0 0 12px; color: var(--ink); }
+.legal ul { margin: 0 0 12px; padding-left: 24px; color: var(--ink); }
+.legal ul li { margin-bottom: 4px; }
 
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .card, .btn { transition: none; }
-  .card:hover, .btn:hover { transform: none; }
-  .card:nth-child(odd), .card:nth-child(even), .hero__image { transform: none; }
+  * { transition: none !important; }
 }
 
 </style>
@@ -481,93 +519,71 @@ a:hover { text-decoration-color: var(--black); }
       <h1 class="hero__title">migamiga</h1>
       <p class="hero__tagline">Sandwiches, wie zuhause. Aber besser. Handgemacht, jeden Werktag frisch in Berlin.</p>
       <a class="btn btn--primary hero__cta" href="https://wa.me/491701234567?text=Hallo%20migamiga!%20Ich%20m%C3%B6chte%20bestellen%3A%20">Per WhatsApp bestellen</a>
-      <img class="hero__image" src="/assets/images/sandwich-1.svg" alt="El Clásico Sandwich" width="600" height="400">
+      <img class="hero__image" src="/assets/images/sandwich-1.svg" alt="El Clásico" width="720" height="480">
     </section>
 
-    <div id="navSentinel" aria-hidden="true"></div>
-
-    <section id="menu" class="section section--cream">
+    <section id="menu" class="section section--paper">
       <div class="section__inner">
+        <span class="section__kicker">Speisekarte</span>
         <h2 class="section__title">Unser Menü</h2>
-        <div class="menu-grid">
-          <article class="card">
-            <img class="card__img" src="/assets/images/sandwich-1.svg" alt="El Clásico" loading="lazy" width="600" height="400">
-            <div class="card__body">
-              <h3 class="card__title">El Clásico</h3>
-              <p class="card__ingredients">Schinken, Käse, Tomate, Salat, Mayo hausgemacht</p>
-              <p class="card__price">€ 7,50</p>
-            </div>
-          </article>
-          <article class="card">
-            <span class="badge badge--nuevo">Neu</span>
-            <img class="card__img" src="/assets/images/sandwich-2.svg" alt="La Milanesa" loading="lazy" width="600" height="400">
-            <div class="card__body">
-              <h3 class="card__title">La Milanesa</h3>
-              <p class="card__ingredients">Panierte Hähnchenbrust, Rucola, Provolone, Chimichurri</p>
-              <p class="card__price">€ 9,90</p>
-            </div>
-          </article>
-          <article class="card">
-            <span class="badge badge--veggie">Veggie</span>
-            <img class="card__img" src="/assets/images/sandwich-3.svg" alt="Green Machine" loading="lazy" width="600" height="400">
-            <div class="card__body">
-              <h3 class="card__title">Green Machine</h3>
-              <p class="card__ingredients">Avocado, Feta, Spinat, geröstete Kürbiskerne, Zitronen-Aioli</p>
-              <p class="card__price">€ 8,50</p>
-            </div>
-          </article>
-          <article class="card">
-            <span class="badge badge--spicy">Spicy</span>
-            <img class="card__img" src="/assets/images/sandwich-4.svg" alt="Spicy Chorizo" loading="lazy" width="600" height="400">
-            <div class="card__body">
-              <h3 class="card__title">Spicy Chorizo</h3>
-              <p class="card__ingredients">Chorizo, Manchego, karamellisierte Zwiebeln, Piquillo-Paprika</p>
-              <p class="card__price">€ 9,50</p>
-            </div>
-          </article>
-          <article class="card">
-            <span class="badge badge--veggie">Veggie</span>
-            <img class="card__img" src="/assets/images/sandwich-5.svg" alt="Fungi Melt" loading="lazy" width="600" height="400">
-            <div class="card__body">
-              <h3 class="card__title">Fungi Melt</h3>
-              <p class="card__ingredients">Kräuterseitlinge, Taleggio, Thymian, Trüffelöl</p>
-              <p class="card__price">€ 10,50</p>
-            </div>
-          </article>
-          <article class="card">
-            <img class="card__img" src="/assets/images/sandwich-6.svg" alt="El Cubano" loading="lazy" width="600" height="400">
-            <div class="card__body">
-              <h3 class="card__title">El Cubano</h3>
-              <p class="card__ingredients">Pulled Pork, Schinken, Schweizer Käse, Senfgurken, Dijon</p>
-              <p class="card__price">€ 10,90</p>
-            </div>
-          </article>
+        <div class="menu">
+          <div class="menu__item">
+            <h3 class="menu__name">El Clásico</h3>
+            <span class="menu__price">€ 7,50</span>
+            <p class="menu__ingredients">Schinken, Käse, Tomate, Salat, Mayo hausgemacht</p>
+          </div>
+          <div class="menu__item">
+            <h3 class="menu__name">La Milanesa <span class="menu__tag">Neu</span></h3>
+            <span class="menu__price">€ 9,90</span>
+            <p class="menu__ingredients">Panierte Hähnchenbrust, Rucola, Provolone, Chimichurri</p>
+          </div>
+          <div class="menu__item">
+            <h3 class="menu__name">Green Machine <span class="menu__tag">Veggie</span></h3>
+            <span class="menu__price">€ 8,50</span>
+            <p class="menu__ingredients">Avocado, Feta, Spinat, geröstete Kürbiskerne, Zitronen-Aioli</p>
+          </div>
+          <div class="menu__item">
+            <h3 class="menu__name">Spicy Chorizo <span class="menu__tag">Spicy</span></h3>
+            <span class="menu__price">€ 9,50</span>
+            <p class="menu__ingredients">Chorizo, Manchego, karamellisierte Zwiebeln, Piquillo-Paprika</p>
+          </div>
+          <div class="menu__item">
+            <h3 class="menu__name">Fungi Melt <span class="menu__tag">Veggie</span></h3>
+            <span class="menu__price">€ 10,50</span>
+            <p class="menu__ingredients">Kräuterseitlinge, Taleggio, Thymian, Trüffelöl</p>
+          </div>
+          <div class="menu__item">
+            <h3 class="menu__name">El Cubano</h3>
+            <span class="menu__price">€ 10,90</span>
+            <p class="menu__ingredients">Pulled Pork, Schinken, Schweizer Käse, Senfgurken, Dijon</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="como-funciona" class="section section--white">
+    <section id="como-funciona" class="section section--bone">
       <div class="section__inner">
+        <span class="section__kicker">Ablauf</span>
         <h2 class="section__title">So geht's</h2>
         <div class="steps">
           <div class="step">
-            <img class="step__icon" src="/assets/svg/icons/icon-1.svg" alt="">
-            <h3 class="step__title">1. Wähl aus</h3>
+            <span class="step__num">01</span>
+            <h3 class="step__title">Wähl aus</h3>
             <p class="step__body">Schick uns per WhatsApp deine Bestellung — heute bis 10:30 Uhr für Lieferung am selben Tag.</p>
           </div>
           <div class="step">
-            <img class="step__icon" src="/assets/svg/icons/icon-2.svg" alt="">
-            <h3 class="step__title">2. Wir bestätigen</h3>
+            <span class="step__num">02</span>
+            <h3 class="step__title">Wir bestätigen</h3>
             <p class="step__body">Kurze Rückmeldung mit Lieferzeit und Adressbestätigung.</p>
           </div>
           <div class="step">
-            <img class="step__icon" src="/assets/svg/icons/icon-3.svg" alt="">
-            <h3 class="step__title">3. Wir liefern</h3>
+            <span class="step__num">03</span>
+            <h3 class="step__title">Wir liefern</h3>
             <p class="step__body">Frisch zu deinem Büro oder deiner Tür in Berlin Mitte oder Prenzlauer Berg.</p>
           </div>
           <div class="step">
-            <img class="step__icon" src="/assets/svg/icons/icon-4.svg" alt="">
-            <h3 class="step__title">4. Genießen</h3>
+            <span class="step__num">04</span>
+            <h3 class="step__title">Genießen</h3>
             <p class="step__body">Auspacken, reinbeißen, glücklich sein.</p>
           </div>
         </div>
@@ -579,13 +595,14 @@ a:hover { text-decoration-color: var(--black); }
       </div>
     </section>
 
-    <section id="contacto" class="section section--yellow">
+    <section id="contacto" class="section section--paper">
       <div class="section__inner contact">
+        <span class="section__kicker">Kontakt</span>
         <h2 class="section__title">Sag Hallo</h2>
         <p class="contact__intro">Kein Formular. Nur eine kurze Nachricht — und dein Lunch ist unterwegs.</p>
-        <a class="btn btn--dark contact__btn" href="https://wa.me/491701234567?text=Hallo%20migamiga!">WhatsApp</a>
-        <a class="btn btn--outline contact__btn" href="https://instagram.com/migamiga_berlin">Instagram</a>
-        <a class="btn btn--outline contact__btn" href="mailto:hola@migamiga.de">hola@migamiga.de</a>
+        <a class="btn btn--primary contact__btn" href="https://wa.me/491701234567?text=Hallo%20migamiga!">WhatsApp</a>
+        <a class="btn contact__btn" href="https://instagram.com/migamiga_berlin">Instagram</a>
+        <a class="btn contact__btn" href="mailto:hola@migamiga.de">hola@migamiga.de</a>
       </div>
     </section>
   </main>

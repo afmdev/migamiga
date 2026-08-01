@@ -1,5 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
-  <rect width="600" height="400" fill="#7C3AED"/>
-  <text x="300" y="220" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="56" fill="#F5C518">El Clásico</text>
-  <text x="300" y="260" text-anchor="middle" font-family="Inter, sans-serif" font-size="20" fill="#FFF8E7">placeholder — replace with photo</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" width="720" height="480">
+  <rect width="720" height="480" fill="#F5F1EA"/>
+  <rect x="0.5" y="0.5" width="719" height="479" fill="none" stroke="#C9BFB2" stroke-width="1"/>
+  <text x="360" y="240" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-weight="300" font-size="42" fill="#1C1A17">El Clásico</text>
+  <text x="360" y="272" text-anchor="middle" font-family="Inter, sans-serif" font-weight="400" font-size="12" fill="#8A857D" letter-spacing="4">PHOTOGRAPH · COMING SOON</text>
 </svg>
