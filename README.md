@@ -29,6 +29,15 @@ python3 scripts/build_i18n.py --dump    # append new English strings to scripts/
 python3 scripts/build_i18n.py -v        # list the missing keys per language
 ```
 
+Canonical URLs, `hreflang`, `og:url`, `og:image` and the sitemap are absolute — Open Graph
+crawlers do not resolve relative paths. They are built from `SITE_BASE`, which defaults to
+`https://migamiga.berlin`. When deploying somewhere else, rebuild with the domain that will
+actually serve the files:
+
+```bash
+SITE_BASE=https://www.alejandrofm.com/projects/migamiga python3 scripts/build_i18n.py
+```
+
 `en.txt` is append-only and holds `id|english`; each `<lang>.txt` holds `id|translation` for the
 same ids. Lookup is by the whitespace-collapsed English string, covering text nodes, `alt`,
 `aria-label`, `title`, `content` and JSON-LD values. Anything matching the `KEEP` pattern (names,

@@ -9,7 +9,7 @@ their whitespace-collapsed, unescaped English text. Missing keys are reported.
 import html, importlib.util, json, os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BASE = "https://migamiga.berlin"
+BASE = os.environ.get("SITE_BASE", "https://migamiga.berlin").rstrip("/")
 LANGS = ["de", "en", "es", "it"]  # first = default (x-default)
 LOCALE = {"de": "de_DE", "en": "en_GB", "es": "es_ES", "it": "it_IT"}
 # source file -> (output file, public slug per language)
