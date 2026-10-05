@@ -6,7 +6,8 @@ $(function() {
   $('.sb-year').text(new Date().getFullYear());
 
   // marquee: repeat the message until half the track is wider than the viewport (track scrolls -50%)
-  $(window).on('load', function() {
+  // runs on DOM ready + fonts (not window load, which waits for every image) and only then starts the animation
+  (document.fonts ? document.fonts.ready : Promise.resolve()).then(function() {
     var $t = $('.sb-marquee-track'), $s = $t.children().first();
     if (!$s.length) return;
     var n = Math.ceil(window.innerWidth / $s.outerWidth()) + 1;
@@ -15,6 +16,7 @@ $(function() {
     }
     // intro (100vw) at the loop's speed (half track per 36s) so it never speeds up or slows down
     $t[0].style.setProperty('--mq-in', (window.innerWidth / ($t[0].scrollWidth / 2) * 36) + 's');
+    $t.addClass('sb-run');
   });
   /***************************
 

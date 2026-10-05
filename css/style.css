@@ -1596,6 +1596,11 @@ marquee
 .sb-marquee .sb-marquee-track {
   display: flex;
   width: max-content;
+  opacity: 0;
+}
+
+.sb-marquee .sb-marquee-track.sb-run {
+  opacity: 1;
   /* intro slides in from the right, then the loop starts (delay = intro length, set by main.js so speed stays constant) */
   animation: sb-marquee-in var(--mq-in, 8s) linear 1 both, sb-marquee 36s linear var(--mq-in, 8s) infinite;
 }
