@@ -179,3 +179,4 @@
 179|Volver al inicio
 180|Envíanos el número de personas, la dirección de entrega y la fecha a info@migamiga.de o al +49 155 65933378. Recibes una propuesta de menú y un precio cerrado en un día laborable. Pide una caja puntual para una reunión o un plan semanal de almuerzos que se repite automáticamente para tu equipo.
 181|Escribe a info@migamiga.de o llama al +49 155 65933378 con la fecha, el lugar, el número de invitados y cualquier requisito dietético. Recibes una propuesta por escrito con precio cerrado, y reservamos la fecha mientras decides.
+182|Nuestra carta

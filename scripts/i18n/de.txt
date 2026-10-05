@@ -179,3 +179,4 @@
 179|Zur Startseite
 180|Schicken Sie uns Ihre Personenzahl, Lieferadresse und das Datum an info@migamiga.de oder +49 155 65933378. Innerhalb eines Werktags erhalten Sie einen Menüvorschlag und einen festen Preis. Bestellen Sie eine einmalige Box für ein Meeting oder einen Wochenplan, der sich für Ihr Team automatisch wiederholt.
 181|Schreiben Sie an info@migamiga.de oder rufen Sie +49 155 65933378 an – mit Datum, Ort, Gästezahl und eventuellen Ernährungswünschen. Sie erhalten ein schriftliches Angebot mit festem Preis, und wir halten den Termin, während Sie entscheiden.
+182|Unsere Karte

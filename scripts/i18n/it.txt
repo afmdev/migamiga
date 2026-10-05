@@ -179,3 +179,4 @@
 179|Torna alla home
 180|Mandaci il numero di persone, l'indirizzo di consegna e la data a info@migamiga.de o al +49 155 65933378. Ricevi una proposta di menù e un prezzo fisso entro un giorno lavorativo. Ordina una scatola singola per una riunione o un piano settimanale di pranzi che si ripete automaticamente per il tuo team.
 181|Scrivi a info@migamiga.de o chiama il +49 155 65933378 con la data, il luogo, il numero di ospiti ed eventuali esigenze alimentari. Ricevi una proposta scritta con prezzo fisso, e teniamo la data mentre decidi.
+182|Il nostro menù
