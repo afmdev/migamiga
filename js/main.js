@@ -91,6 +91,8 @@ $(function() {
     if (url.protocol !== location.protocol || url.host !== location.host) return;
     if (url.href.split('#')[0] === location.href.split('#')[0]) return; // misma página o solo hash
 
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
     e.preventDefault();
     document.documentElement.classList.add('is-animating');
     setTimeout(function() {

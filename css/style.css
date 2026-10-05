@@ -1026,6 +1026,11 @@ page transitions
 
 ***************************/
 .sb-load {
+  /* cuánto tiene que crecer la bola para tapar la pantalla; lo ajustan los media queries */
+  --sb-cover: 2;
+  /* el repliegue al llegar: swup lo hacía quitando is-animating tras el swap AJAX.
+     Con navegación real la bola tiene que encogerse en la página que carga. */
+  animation: sb-load-retract 0.6s ease-in-out;
   border-radius: 50%;
   background-color: #F5C332;
   width: 80vw;
@@ -1048,8 +1053,23 @@ html.is-animating .sb-load {
   left: 50%;
   margin-top: -40vw;
   bottom: auto;
-  transform: scale(2);
+  transform: scale(var(--sb-cover));
   pointer-events: all;
+}
+
+@keyframes sb-load-retract {
+  from {
+    top: 0;
+    bottom: auto;
+    margin-top: -40vw;
+    transform: scale(var(--sb-cover));
+  }
+  to {
+    top: 0;
+    bottom: auto;
+    margin-top: -40vw;
+    transform: scale(0);
+  }
 }
 
 .sb-transition-fade {
@@ -1080,8 +1100,8 @@ html.is-animating .sb-menu-transition .sb-navigation li ul {
 }
 
 @media (max-width: 992px) {
-  html.is-animating .sb-load {
-    transform: scale(3);
+  .sb-load {
+    --sb-cover: 3;
   }
 
   html.is-animating .sb-menu-transition .sb-navigation {
@@ -1091,8 +1111,14 @@ html.is-animating .sb-menu-transition .sb-navigation li ul {
 }
 
 @media (max-width: 768px) {
-  html.is-animating .sb-load {
-    transform: scale(6.5);
+  .sb-load {
+    --sb-cover: 6.5;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sb-load {
+    animation: none;
   }
 }
 
