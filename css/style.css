@@ -1057,17 +1057,14 @@ html.is-animating .sb-load {
   pointer-events: all;
 }
 
+/* Sin tocar top/bottom: hereda el anclaje inferior de .sb-load, así que la bola
+   encoge hacia abajo y desaparece por el borde inferior, como hacía swup al
+   devolverla a su estado base. */
 @keyframes sb-load-retract {
   from {
-    top: 0;
-    bottom: auto;
-    margin-top: -40vw;
     transform: scale(var(--sb-cover));
   }
   to {
-    top: 0;
-    bottom: auto;
-    margin-top: -40vw;
     transform: scale(0);
   }
 }
