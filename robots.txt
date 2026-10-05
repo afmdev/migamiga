@@ -1,4 +1,37 @@
+# MIGAMIGA — https://migamiga.berlin
 User-agent: *
 Allow: /
 
-Sitemap: https://migamiga.de/sitemap.xml
+# Classic search
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# AI search / answer engines (cite + recommend)
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://migamiga.berlin/sitemap.xml

@@ -28,3 +28,5 @@ TestResults.xml
 node_modules/
 .env
 .env.local
+# Clon de referencia del tema original (no se sube)
+references/

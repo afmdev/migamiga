@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240">
-  <rect width="240" height="240" fill="#2A1836"/>
-  <circle cx="120" cy="120" r="90" fill="#C084FC" opacity="0.30"/>
-  <text x="120" y="112" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-weight="300" font-size="26" fill="#C084FC">Fungi</text>
-  <text x="120" y="146" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-weight="300" font-size="26" fill="#FFFFFF">Melt</text>
-</svg>
