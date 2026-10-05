@@ -4,6 +4,18 @@ $(function() {
   "use strict";
 
   $('.sb-year').text(new Date().getFullYear());
+
+  // marquee: repeat the message until half the track is wider than the viewport (track scrolls -50%)
+  $(window).on('load', function() {
+    var $t = $('.sb-marquee-track'), $s = $t.children().first();
+    if (!$s.length) return;
+    var n = Math.ceil(window.innerWidth / $s.outerWidth()) + 1;
+    for (var i = 1; i < 2 * n; i++) {
+      $t.append($s.clone().attr('aria-hidden', 'true').find('a').attr('tabindex', '-1').end());
+    }
+    // intro (100vw) at the loop's speed (half track per 36s) so it never speeds up or slows down
+    $t[0].style.setProperty('--mq-in', (window.innerWidth / ($t[0].scrollWidth / 2) * 36) + 's');
+  });
   /***************************
 
   preloader
@@ -202,6 +214,16 @@ $(function() {
   menu
 
   ***************************/
+  // language switcher: click toggle for touch, outside click / Esc closes
+  $(document).on('click', '.sb-lang-btn', function(e) {
+    e.stopPropagation();
+    var open = $(this).parent().toggleClass('sb-open').hasClass('sb-open');
+    $(this).attr('aria-expanded', open);
+  });
+  $(document).on('click keydown', function(e) {
+    if (e.type === 'keydown' && e.key !== 'Escape') return;
+    $('.sb-lang').removeClass('sb-open').find('.sb-lang-btn').attr('aria-expanded', false);
+  });
   $('.sb-menu-btn').on('click', function() {
     $('.sb-menu-btn , .sb-navigation').toggleClass('sb-active');
     $('.sb-info-btn , .sb-info-bar , .sb-minicart').removeClass('sb-active');

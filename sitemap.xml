@@ -8,6 +8,7 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://migamiga.berlin/de/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://migamiga.berlin/en/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://migamiga.berlin/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://migamiga.berlin/it/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://migamiga.berlin/de/"/>
   </url>
   <url>
@@ -18,6 +19,7 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://migamiga.berlin/de/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://migamiga.berlin/en/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://migamiga.berlin/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://migamiga.berlin/it/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://migamiga.berlin/de/"/>
   </url>
   <url>
@@ -28,6 +30,18 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://migamiga.berlin/de/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://migamiga.berlin/en/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://migamiga.berlin/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://migamiga.berlin/it/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://migamiga.berlin/de/"/>
+  </url>
+  <url>
+    <loc>https://migamiga.berlin/it/</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://migamiga.berlin/de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://migamiga.berlin/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://migamiga.berlin/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://migamiga.berlin/it/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://migamiga.berlin/de/"/>
   </url>
   <url>
@@ -38,6 +52,7 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://migamiga.berlin/de/ueber-uns"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://migamiga.berlin/en/about"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://migamiga.berlin/es/nosotros"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://migamiga.berlin/it/chi-siamo"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://migamiga.berlin/de/ueber-uns"/>
   </url>
   <url>
@@ -48,6 +63,7 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://migamiga.berlin/de/ueber-uns"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://migamiga.berlin/en/about"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://migamiga.berlin/es/nosotros"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://migamiga.berlin/it/chi-siamo"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://migamiga.berlin/de/ueber-uns"/>
   </url>
   <url>
@@ -58,6 +74,18 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://migamiga.berlin/de/ueber-uns"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://migamiga.berlin/en/about"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://migamiga.berlin/es/nosotros"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://migamiga.berlin/it/chi-siamo"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://migamiga.berlin/de/ueber-uns"/>
+  </url>
+  <url>
+    <loc>https://migamiga.berlin/it/chi-siamo</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://migamiga.berlin/de/ueber-uns"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://migamiga.berlin/en/about"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://migamiga.berlin/es/nosotros"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://migamiga.berlin/it/chi-siamo"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://migamiga.berlin/de/ueber-uns"/>
   </url>
   <url>
@@ -68,6 +96,7 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://migamiga.berlin/de/faq"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://migamiga.berlin/en/faq"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://migamiga.berlin/es/faq"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://migamiga.berlin/it/faq"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://migamiga.berlin/de/faq"/>
   </url>
   <url>
@@ -78,6 +107,7 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://migamiga.berlin/de/faq"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://migamiga.berlin/en/faq"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://migamiga.berlin/es/faq"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://migamiga.berlin/it/faq"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://migamiga.berlin/de/faq"/>
   </url>
   <url>
@@ -88,6 +118,18 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://migamiga.berlin/de/faq"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://migamiga.berlin/en/faq"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://migamiga.berlin/es/faq"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://migamiga.berlin/it/faq"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://migamiga.berlin/de/faq"/>
+  </url>
+  <url>
+    <loc>https://migamiga.berlin/it/faq</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://migamiga.berlin/de/faq"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://migamiga.berlin/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://migamiga.berlin/es/faq"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://migamiga.berlin/it/faq"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://migamiga.berlin/de/faq"/>
   </url>
 </urlset>
