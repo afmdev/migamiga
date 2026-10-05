@@ -1119,7 +1119,7 @@ html.is-animating .sb-menu-transition .sb-navigation li ul {
   .sb-load {
     transform: scale(var(--sb-cover));
     opacity: 0;
-    transition: opacity 0.3s linear;
+    transition: opacity 0.25s linear;
     animation: sb-load-fade 0.3s linear;
   }
 
