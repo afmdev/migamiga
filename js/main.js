@@ -73,12 +73,30 @@ $(function() {
   swup
 
   ***************************/
-  const options = {
-    containers: ['#sb-dynamic-content', '#sb-dynamic-menu'],
-    animateHistoryBrowsing: true,
-    linkSelector: '.sb-navigation a:not([data-no-swup]) , a:not([data-no-swup])',
-  };
-  // const swup = new Swup(options); // disabled: pushState/AJAX no funciona en file://
+  // Swup sigue desactivado: su AJAX no funciona en file://. La cortinilla (.sb-load)
+  // se dispara a mano con la misma clase html.is-animating que usaba swup.
+  const CURTAIN_MS = 600; // = transition de .sb-load en style.css
+
+  // pageshow (no load) para que el bfcache no devuelva la página con la cortinilla echada
+  window.addEventListener('pageshow', function() {
+    document.documentElement.classList.remove('is-animating');
+  });
+
+  document.addEventListener('click', function(e) {
+    if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    const a = e.target.closest('a[href]');
+    if (!a || a.target === '_blank' || a.hasAttribute('download')) return;
+
+    const url = new URL(a.href, location.href);
+    if (url.protocol !== location.protocol || url.host !== location.host) return;
+    if (url.href.split('#')[0] === location.href.split('#')[0]) return; // misma página o solo hash
+
+    e.preventDefault();
+    document.documentElement.classList.add('is-animating');
+    setTimeout(function() {
+      location.href = url.href;
+    }, CURTAIN_MS);
+  });
   /***************************
 
   isotope
