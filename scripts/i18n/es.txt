@@ -1,5 +1,5 @@
-1|Catering de sándwiches en Berlín – Lunch boxes y eventos | MIGAMIGA
-2|Catering de sándwiches artesanales en Berlín: lunch boxes para oficinas, catering para eventos y pop-ups, con pan que horneamos cada mañana. Presupuesto cerrado en un día laborable.
+1|Catering de sándwiches en Berlín – Lunch boxes | MIGAMIGA
+2|Catering de sándwiches artesanales en Berlín: lunch boxes, eventos y pop-ups, con pan horneado cada mañana.
 3|Sándwich artesanal de MIGAMIGA sobre pan recién horneado
 4|Sándwiches artesanales con pan horneado en casa en Berlín. Catering para eventos corporativos y privados, lunch boxes para oficinas y grupos, y eventos gastronómicos pop-up.
 5|Servicios de MIGAMIGA
@@ -96,8 +96,8 @@
 96|Hablemos de tu pedido
 97|Lunch boxes, catering o un pop-up: envíanos la fecha, el número de personas y el código postal y recibirás un presupuesto cerrado en un día laborable.
 98|Cerrar
-99|Sobre MIGAMIGA – Catering de sándwiches artesanales en Berlín
-100|Quiénes somos: una cocina de sándwiches de Berlín que prepara cada mañana lunch boxes para oficinas, catering para eventos y pop-ups, con entrega en toda la ciudad.
+99|Sobre MIGAMIGA – Catering de sándwiches en Berlín
+100|Cocina de sándwiches en Berlín: lunch boxes, eventos y pop-ups, frescos cada mañana y con entrega en toda la ciudad.
 101|Catering de sándwiches en Berlín,
 102|con pan que horneamos nosotros
 103|MIGAMIGA nació de una pequeña queja: el almuerzo en Berlín es o un triste triángulo de supermercado o una hora que nadie tiene. Así que empezamos a hacer sándwiches como deberían hacerse: pan amasado y horneado a mano en nuestra propia cocina, rellenos preparados esa misma mañana y suficientes para alimentar a una oficina entera. Lo que empezó como unas cuantas cajas para amigos es hoy el almuerzo de equipos, catering para eventos de empresa y un puesto pop-up que aparece por toda la ciudad.
@@ -105,8 +105,8 @@
 105|Cocina de sándwiches de MIGAMIGA en Berlín
 106|Firma de MIGAMIGA
 107|Por qué los equipos de Berlín nos eligen
-108|FAQ – Lunch boxes para oficinas y catering en Berlín | MIGAMIGA
-109|Catering de sándwiches en Berlín, respondido: distritos de entrega, pedido mínimo, precio por persona, opciones veganas y alérgenos, reservas de eventos y fechas de pop-ups.
+108|FAQ – Lunch boxes y catering en Berlín | MIGAMIGA
+109|Distritos de entrega, pedido mínimo, precio por persona, opciones veganas y alérgenos, eventos y fechas de pop-ups.
 110|¿Cómo pido lunch boxes para la oficina en Berlín?
 111|¿A qué distritos de Berlín entregáis?
 112|Entregamos lunch boxes y catering en todo Berlín, incluidos Mitte, Kreuzberg, Prenzlauer Berg, Friedrichshain, Neukölln, Charlottenburg, Schöneberg y Moabit. También es posible en oficinas fuera del Ring. Envíanos tu código postal y te confirmamos el coste de envío antes de reservar.

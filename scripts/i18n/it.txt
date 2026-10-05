@@ -1,5 +1,5 @@
-1|Catering di panini a Berlino – Lunch box ed eventi | MIGAMIGA
-2|Catering di panini artigianali a Berlino: lunch box per l'ufficio, catering per eventi e pop-up, con pane che sforniamo ogni mattina. Preventivo fisso entro un giorno lavorativo.
+1|Catering di panini a Berlino – Lunch box | MIGAMIGA
+2|Catering di panini artigianali a Berlino: lunch box, eventi e pop-up, con pane sfornato ogni mattina.
 3|Panino artigianale MIGAMIGA su pane appena sfornato
 4|Panini artigianali con pane sfornato in casa a Berlino. Catering per eventi aziendali e privati, lunch box per uffici e gruppi ed eventi gastronomici pop-up.
 5|Servizi MIGAMIGA
@@ -97,7 +97,7 @@
 97|Lunch box, catering o un pop-up: mandaci la data, il numero di persone e il CAP e ricevi un preventivo fisso entro un giorno lavorativo.
 98|Chiudi
 99|Chi è MIGAMIGA – Catering di panini artigianali a Berlino
-100|Chi siamo: una cucina di panini di Berlino che prepara ogni mattina lunch box per uffici, catering per eventi e pop-up, con consegna in tutta la città.
+100|Cucina di panini a Berlino: lunch box per uffici, eventi e pop-up, preparati ogni mattina e consegnati in città.
 101|Catering di panini a Berlino,
 102|con il pane che facciamo noi
 103|MIGAMIGA è nata da una piccola lamentela: il pranzo a Berlino è o un triste triangolo da supermercato o un'ora che nessuno ha a disposizione. Così abbiamo iniziato a fare i panini come andrebbero fatti: pane impastato e cotto a mano nella nostra cucina, farciture preparate la stessa mattina e abbastanza per sfamare un intero ufficio. Quelle che erano poche scatole per gli amici sono oggi il pranzo di tanti team, il catering per eventi aziendali e uno stand pop-up che compare in giro per la città.
@@ -105,8 +105,8 @@
 105|Cucina dei panini MIGAMIGA a Berlino
 106|Firma MIGAMIGA
 107|Perché i team di Berlino ordinano da noi
-108|FAQ – Lunch box per l'ufficio e catering a Berlino | MIGAMIGA
-109|Catering di panini a Berlino, le risposte: quartieri di consegna, ordine minimo, prezzo a persona, opzioni vegane e allergeni, prenotazione eventi e date dei pop-up.
+108|FAQ – Lunch box e catering a Berlino | MIGAMIGA
+109|Quartieri di consegna, ordine minimo, prezzo a persona, opzioni vegane e allergeni, prenotazione eventi e date dei pop-up.
 110|Come ordino lunch box per l'ufficio a Berlino?
 111|In quali quartieri di Berlino consegnate?
 112|Consegniamo lunch box e catering in tutta Berlino, tra cui Mitte, Kreuzberg, Prenzlauer Berg, Friedrichshain, Neukölln, Charlottenburg, Schöneberg e Moabit. Sono possibili anche uffici fuori dall'Anello. Mandaci il tuo CAP e ti confermiamo il costo di consegna prima della prenotazione.
