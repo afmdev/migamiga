@@ -1,0 +1,9 @@
+# Slugs por idioma de la página "sobre nosotros". Los ficheros son <lang>/about.html,
+# pero el canonical y el sitemap usan el slug traducido (PAGES en scripts/build_i18n.py).
+# Proxy (200): se sirve el fichero sin cambiar la URL.
+/de/ueber-uns  /de/about.html  200
+/es/nosotros   /es/about.html  200
+/it/chi-siamo  /it/about.html  200
+
+# Los 404 no se configuran aquí: Pages sirve el 404.html más cercano en el árbol
+# (de/404.html, en/404.html, ... y 404.html en la raíz como último recurso).
