@@ -91,13 +91,13 @@ $(function() {
     if (url.protocol !== location.protocol || url.host !== location.host) return;
     if (url.href.split('#')[0] === location.href.split('#')[0]) return; // misma página o solo hash
 
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
     e.preventDefault();
     document.documentElement.classList.add('is-animating');
+    // con "reducir movimiento" la cortinilla es un fundido de 0.3s, no hay que esperar 0.6
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     setTimeout(function() {
       location.href = url.href;
-    }, CURTAIN_MS);
+    }, reduced ? 300 : CURTAIN_MS);
   });
   /***************************
 

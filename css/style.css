@@ -1113,9 +1113,27 @@ html.is-animating .sb-menu-transition .sb-navigation li ul {
   }
 }
 
+/* Con "reducir movimiento" no se escala nada: la bola está ya a tamaño de cobertura
+   y solo entra y sale por opacidad, que es el sustituto habitual para esa preferencia. */
 @media (prefers-reduced-motion: reduce) {
   .sb-load {
-    animation: none;
+    transform: scale(var(--sb-cover));
+    opacity: 0;
+    transition: opacity 0.3s linear;
+    animation: sb-load-fade 0.3s linear;
+  }
+
+  html.is-animating .sb-load {
+    opacity: 0.9;
+  }
+}
+
+@keyframes sb-load-fade {
+  from {
+    opacity: 0.9;
+  }
+  to {
+    opacity: 0;
   }
 }
 
